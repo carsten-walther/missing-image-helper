@@ -23,25 +23,14 @@ class ImageService extends \TYPO3\CMS\Extbase\Service\ImageService
             $configuration = $extensionConfiguration->get('missing_image_helper');
 
             if ($src !== '' && Environment::getContext()->isDevelopment() && (bool)$configuration['useInDevelopmentContext']) {
-
-                $pathinfo = pathinfo(Environment::getProjectPath() . DIRECTORY_SEPARATOR . $src);
-                if (array_key_exists($pathinfo['extension'], $configuration['replacementPath']) && !file_exists($pathinfo['dirname'] . DIRECTORY_SEPARATOR . $pathinfo['basename'])) {
-                    $src = $configuration['replacementPath'][$pathinfo['extension']];
-                    $image = NULL;
-                    $treatIdAsReference = false;
-                }
+                $image = $this->getImageFromSourceString($src, $treatIdAsReference);
+                $publicUrl = $image->getPublicUrl();
+                $src = $this->resolveReplacement($publicUrl, $configuration);
             }
 
             if (!is_null($image) && Environment::getContext()->isDevelopment() && (bool)$configuration['useInDevelopmentContext']) {
-
                 $publicUrl = $image instanceof FileReference ? $image->getOriginalResource()->getPublicUrl() : $image->getPublicUrl();
-
-                $pathinfo = pathinfo(Environment::getProjectPath() . $publicUrl);
-                if (array_key_exists($pathinfo['extension'], $configuration['replacementPath']) && !file_exists($pathinfo['dirname'] . DIRECTORY_SEPARATOR . $pathinfo['basename'])) {
-                    $src = $configuration['replacementPath'][$pathinfo['extension']];
-                    $image = NULL;
-                    $treatIdAsReference = false;
-                }
+                $src = $this->resolveReplacement($publicUrl, $configuration);
             }
 
         } catch (\Exception $exception) {
@@ -49,5 +38,22 @@ class ImageService extends \TYPO3\CMS\Extbase\Service\ImageService
         }
 
         return parent::getImage($src, $image, $treatIdAsReference);
+    }
+
+    /**
+     * @param string $publicUrl
+     * @param array $configuration
+     * @return string
+     */
+    private function resolveReplacement(string $publicUrl, array $configuration): string
+    {
+        $src = '';
+
+        $pathinfo = pathinfo(Environment::getProjectPath() . $publicUrl);
+        if (array_key_exists($pathinfo['extension'], $configuration['replacementPath']) && !file_exists($pathinfo['dirname'] . DIRECTORY_SEPARATOR . $pathinfo['basename'])) {
+            $src = $configuration['replacementPath'][$pathinfo['extension']];
+        }
+
+        return $src;
     }
 }

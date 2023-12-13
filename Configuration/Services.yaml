@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  CarstenWalther\MissingImageHelper\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Service/*'
+
+  CarstenWalther\MissingImageHelper\Event\Listener\AddToHtaccessEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-missing-image-helper/add-to-htaccess'
+        event: TYPO3\CMS\Core\Package\Event\AfterPackageActivationEvent
+
+  CarstenWalther\MissingImageHelper\Event\Listener\RemoveFromHtaccessEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-missing-image-helper/remove-from-htaccess'
+        event: TYPO3\CMS\Core\Package\Event\AfterPackageDeactivationEvent
