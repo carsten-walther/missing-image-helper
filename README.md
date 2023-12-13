@@ -1,12 +1,12 @@
 Missing image helper for TYPO3
 =============================
 
-[![Issues](https://img.shields.io/github/issues/carsten-walther/missing-image-viewhelper)](https://img.shields.io/github/issues/carsten-walther/missing-image-viewhelper)
-[![Forks](https://img.shields.io/github/forks/carsten-walther/missing-image-viewhelper)](https://github.com/carsten-walther/missing-image-viewhelper/network/members)
-[![Stars](https://img.shields.io/github/stars/carsten-walther/missing-image-viewhelper)](https://github.com/carsten-walther/missing-image-viewhelper/stargazers)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/carsten-walther/missing-image-viewhelper)](https://github.com/carsten-walther/missing-image-viewhelper/releases/latest)
-[![License](https://img.shields.io/github/license/carsten-walther/missing-image-viewhelper)](LICENSE.txt)
-[![GitHub All Releases](https://img.shields.io/github/downloads/carsten-walther/missing-image-viewhelper/total)](https://github.com/carsten-walther/missing-image-viewhelper/releases/latest)
+[![Issues](https://img.shields.io/github/issues/carsten-walther/missing-image-helper)](https://img.shields.io/github/issues/carsten-walther/missing-image-helper)
+[![Forks](https://img.shields.io/github/forks/carsten-walther/missing-image-helper)](https://github.com/carsten-walther/missing-image-helper/network/members)
+[![Stars](https://img.shields.io/github/stars/carsten-walther/missing-image-helper)](https://github.com/carsten-walther/missing-image-helper/stargazers)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/carsten-walther/missing-image-helper)](https://github.com/carsten-walther/missing-image-helper/releases/latest)
+[![License](https://img.shields.io/github/license/carsten-walther/missing-image-helper)](LICENSE.txt)
+[![GitHub All Releases](https://img.shields.io/github/downloads/carsten-walther/missing-image-helper/total)](https://github.com/carsten-walther/missing-image-helper/releases/latest)
 
 Add copyright informations of all images to your site.
 
