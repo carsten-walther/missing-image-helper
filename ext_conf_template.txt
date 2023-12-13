@@ -1,0 +1,14 @@
+# cat=basic/enable/1; type=boolean; label=Use this only in Development application context.
+useInDevelopmentContext = 1
+
+# cat=paths/enable/1; type=string; label=Path to the png image file to be displayed if the original source is missing.
+replacementPath.png = EXT:missing_image_helper/Resources/Public/test.png
+
+# cat=paths/enable/2; type=string; label=Path to the jpg image file to be displayed if the original source is missing.
+replacementPath.jpg = EXT:missing_image_helper/Resources/Public/test.jpg
+
+# cat=paths/enable/3; type=string; label=Path to the pdf document file to be displayed if the original source is missing.
+replacementPath.pdf = EXT:missing_image_helper/Resources/Public/test.pdf
+
+# cat=paths/enable/4; type=string; label=Path to the svg image file to be displayed if the original source is missing.
+replacementPath.svg = EXT:missing_image_helper/Resources/Public/test.svg

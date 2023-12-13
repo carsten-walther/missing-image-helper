@@ -1,0 +1,37 @@
+{
+	"name": "carsten-walther/missing-image-viewhelper",
+	"type": "typo3-cms-extension",
+	"version": "0.0.0",
+	"minimum-stability": "stable",
+	"description": "This extension catches missing images and renders a test image instead of an error message.",
+	"license": "GPL-3.0-or-later",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"images"
+	],
+	"require": {
+		"php": "^7.4 || ^8.1 || ^8.2",
+		"typo3/cms-core": "^11.5 || ^12.4"
+	},
+	"authors": [
+		{
+			"name": "Carsten Walther",
+			"role": "Developer",
+			"email": "walther.carsten@web.de"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"CarstenWalther\\MissingImageHelper\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "missing_image_viewhelper"
+		}
+	},
+	"replace": {
+		"typo3-ter/missing_image_viewhelper": "self.version"
+	}
+}
